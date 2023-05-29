@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+hr {
+    margin: 0;
+}
+
 html, body {
     height: 100%;
 }
@@ -32,6 +36,7 @@ a {
 .container {
     max-width: 1140px;
     margin: 0 auto;
+    padding: 0px 8px;
 }
 
 .section-title {
@@ -73,6 +78,8 @@ a {
     display: flex;
     align-items: center;
     column-gap: 32px;
+    margin-top: 16px;
+    margin-bottom: 5px;
 }
 
 .header__nav {
@@ -81,6 +88,18 @@ a {
 }
 
 .header__nav-link {
+    color: #FFFFFF;
+}
+
+.header__nav-link_selected {
+    border-bottom: #FFFFFF solid 2px;
+}
+
+.header__address a {
+    color: #FFFFFF;
+}
+
+.header__telephone a {
     color: #FFFFFF;
 }
 
@@ -129,6 +148,10 @@ a {
     line-height: 18px;
     color: #FFFFFF;
     margin-bottom: 164px;
+}
+
+.hero__cta-highlight {
+    color: #ED7173;
 }
 
 .hero__advantages {
@@ -196,6 +219,7 @@ a {
 
 .advantages {
     display: flex;
+    /* flex: 1 1 44px; */
     text-align: center;
     column-gap: 16px;
 }
@@ -205,12 +229,12 @@ a {
     color: #FFFFFF;
     border: #FFFFFF solid 2px;
     border-radius: 4px;
-    width: 211px;
-    padding: 16px 5px;
+    width: 265px;
+    padding: 20px 20px;
 }
 
 .advantages__item-icon {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .advantages__item_bg-filled {
@@ -225,10 +249,6 @@ a {
     padding-bottom: 90px;
 }
 
-.service__item-text {
-    color: #252525;
-}
-
 .services__container {
     text-align: center;
 }
@@ -236,15 +256,28 @@ a {
 .service {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     margin-bottom: 60px;
 }
 
 .service__item {
     border: #D4D4D4 solid 2px;
+    border-radius: 2px;
+    transition: 0.2s;
+}
+
+.service__item:hover {
+    background-color: #ED7173;
+    border: #ED7173 solid 2px;
+}
+
+.service__item:hover .service__item-text {
+    color: #FFFFFF;
 }
 
 .service__item-text {
+    color: #252525;
     padding-top: 14px;
     padding-bottom: 13px;
 }
@@ -277,8 +310,24 @@ a {
 .works__list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     margin-bottom: 60px;
+}
+
+.works__item-img-wrap {
+    position: relative;
+}
+
+.works__img-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.4s;
+}
+
+.works__img-top:hover {
+    opacity: 0;
 }
 
 .contact {
@@ -336,6 +385,9 @@ input[type=file] {
     padding: 12px 17px;
 }
 
+.contact__file-upload:hover {
+    cursor: pointer;
+}
 
 .contact__field {
     background: #FFFFFF;
@@ -351,9 +403,16 @@ input[type=file] {
 .btn {
     background-color: transparent;
     border-radius: 4px;
-    padding: 12px 108px;
+    padding: 12px 45px;
     border: white solid 2px;
     color: white;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    border: #ED7173 solid 2px;
+    background-color: #ED7173;
+    cursor: pointer;
 }
 
 .btn_bg-filled {
@@ -361,6 +420,14 @@ input[type=file] {
     background-color: white;
     color: #000000;
     padding: 12px 17px;
+    transition: 0.2s;
+}
+
+.btn_bg-filled:hover {
+    border: #ED7173 solid 2px;
+    background-color: #ED7173;
+    color: #FFFFFF;
+    cursor: pointer;
 }
 
 .contact__btn {
@@ -392,6 +459,33 @@ input[type=file] {
 }
 
 
-/* @media (max-width: 960px) {
+@media (max-width: 960px) {
     
+    .header__columns .header__column:nth-child(3) {
+        display: none;
+    }
+
+    .reviews__list .reviews__item:nth-child(2) {
+        display: none;
+        column-gap: 0px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .contact__form {
+        flex-wrap: wrap;
+        row-gap: 20px;
+        align-items: start;
+    }
+
+    .contact__form-left {
+        order: 2;
+    }
+
+    .contact__form-right {
+        order: 1;
+    }
+
 }
